@@ -4,69 +4,68 @@
 
 [node name="hand" type="Node2D"]
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="draw" parent="." instance=ExtResource("1_sur6l")]
+offset_left = 301.0
+offset_top = 113.0
+offset_right = 319.0
+offset_bottom = 139.0
+handIndex = 13
 
-[node name="draw" type="GridContainer" parent="CenterContainer"]
-layout_mode = 2
+[node name="hand" type="GridContainer" parent="."]
+offset_left = 73.0
+offset_top = 167.0
+offset_right = 567.0
+offset_bottom = 193.0
 theme_override_constants/h_separation = 20
+columns = 13
 
-[node name="draw" parent="CenterContainer/draw" instance=ExtResource("1_sur6l")]
+[node name="tile1" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
 
-[node name="hand" type="GridContainer" parent="CenterContainer"]
+[node name="tile2" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-theme_override_constants/h_separation = 20
-columns = 14
+handIndex = 1
 
-[node name="tile1" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile3" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
+handIndex = 2
 
-[node name="tile2" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile4" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 1
+handIndex = 3
 
-[node name="tile3" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile5" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 2
+handIndex = 4
 
-[node name="tile4" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile6" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 3
+handIndex = 5
 
-[node name="tile5" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile7" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 4
+handIndex = 6
 
-[node name="tile6" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile8" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 5
+handIndex = 7
 
-[node name="tile7" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile9" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 6
+handIndex = 8
 
-[node name="tile8" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile10" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 7
+handIndex = 9
 
-[node name="tile9" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile11" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 8
+handIndex = 10
 
-[node name="tile10" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile12" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 9
+handIndex = 11
 
-[node name="tile11" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+[node name="tile13" parent="hand" instance=ExtResource("1_sur6l")]
 layout_mode = 2
-index = 10
-
-[node name="tile12" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
-layout_mode = 2
-index = 11
-
-[node name="tile13" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
-layout_mode = 2
-index = 12
+handIndex = 12

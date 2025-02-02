@@ -7,6 +7,7 @@ var handWind = ''
 # player is player 1 and the others are CPU.
 var player1 = {
 	'Hand' = [],
+	'Tile Stats' = [], # Track held and non-held tiles; 1=Hold, 0=Discard
 	'Score' = 0
 }
 
