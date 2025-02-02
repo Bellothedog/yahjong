@@ -2,6 +2,7 @@ extends Node2D
 
 # to be emitted when hand state changes
 signal updateHand
+signal gameOver
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,9 +54,11 @@ func dealTiles() -> void:
 func dealNew():
 	# Deal new tile to each unheld tile in hand
 	for tile in len(Global.player1['Tile Stats']):
-		print(tile)
 		if Global.player1['Tile Stats'][tile] == 0:
-			Global.player1['Hand'][tile] = Global.tiles[0]
-			Global.tiles.remove_at(0)
-	Global.player1['Hand'].sort_custom(sort)
+			if len(Global.tiles) > 0:
+				Global.player1['Hand'][tile] = Global.tiles[0]
+				Global.tiles.remove_at(0)
+			else:
+				Global.player1['Hand'].sort_custom(sort)
+				gameOver.emit()
 	updateHand.emit()
