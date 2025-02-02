@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://jvky3jxq7km7"]
+
+[ext_resource type="PackedScene" uid="uid://cfxrmn61gxncn" path="res://scenes/tile.tscn" id="1_sur6l"]
+
+[node name="hand" type="Node2D"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="draw" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="draw" parent="CenterContainer/draw" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+
+[node name="hand" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 14
+
+[node name="tile1" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+
+[node name="tile2" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 1
+
+[node name="tile3" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 2
+
+[node name="tile4" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 3
+
+[node name="tile5" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 4
+
+[node name="tile6" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 5
+
+[node name="tile7" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 6
+
+[node name="tile8" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 7
+
+[node name="tile9" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 8
+
+[node name="tile10" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 9
+
+[node name="tile11" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 10
+
+[node name="tile12" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 11
+
+[node name="tile13" parent="CenterContainer/hand" instance=ExtResource("1_sur6l")]
+layout_mode = 2
+index = 12
