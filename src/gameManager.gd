@@ -17,30 +17,31 @@ func _input(event) -> void:
 func score():
 	var group = 0
 	var pair = 0
-	# Go through tiles one by one
-	for tile in len(Global.player1['Hand']) - 2:
-		for suit in Global.suits:
-			# Try to find tile in suit
-			if suit.find(Global.player1['Hand'][tile]) != -1:
-				# Test if next tile is part of sequence
-				if Global.player1['Hand'][tile + 1] == suit[suit.find(Global.player1['Hand'][tile + 1])]:
-					# Test if next tile over is also part of sequence, chii
-					if Global.player1['Hand'][tile + 2] == suit[suit.find(Global.player1['Hand'][tile + 2])]:
-						group += 1
-				# Test if next tile is identical
-				elif Global.player1['Hand'][tile + 1] == Global.player1['Hand'][tile]:
-					# Test if next tile over is also identical, pon
-					if Global.player1['Hand'][tile + 1] == Global.player1['Hand'][tile]:
-						group += 1
-					else:
-						pair += 1
-				else:
-					if (group == 4 and pair == 1) or (pair == 7):
-						print('Win!')
-					else:
-						print('No win')
-						break
+	var sliceStart = 0
+	var suitOfTile = 0
 	
+	# Determine suit of current tile
+	for suit in Global.suits:
+		if Global.suits.find(Global.player1['Hand'][sliceStart]) != -1:
+			suitOfTile = suit
+			break
+	
+	while sliceStart <= 12:
+		# Test if 3-tile slice is in the suit; chii
+		if Global.player1['Hand'].slice(sliceStart, sliceStart + 3) in Global.suits[suitOfTile]:
+			group += 1
+			sliceStart += 3
+		# Test if 3-tile slice is identical; pon. If not, test if containing pair
+		elif Global.player1['Hand'][sliceStart] == Global.player1['Hand'][sliceStart + 1]:
+			if Global.player1['Hand'][sliceStart] == Global.player1['Hand'][sliceStart + 2]:
+				group += 1
+				sliceStart += 3
+			else:
+				pair += 1
+				sliceStart += 2
+		else:
+			print('No win!')
+			break
 
 func gameOver():
 	print('Game Over!')
